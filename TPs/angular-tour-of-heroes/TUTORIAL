@@ -3,7 +3,10 @@ ng update --all=true --force (node arma deps para src)
 ng serve -o (compila y levanta server)
 
 en app.component.ts agrego las clases que voy generando
-las componentes contienen la funcionalidad de cada clase y se agregan solas las dependencias
+las componentes contienen la funcionalidad de cada clase
+y se agregan solas las dependencias
+
+los servicios se encargan de la gestion de datos de la clase
 
 usar subcarpetas clases y componentes dentro de src/app
 
