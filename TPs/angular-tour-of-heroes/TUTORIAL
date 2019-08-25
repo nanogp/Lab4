@@ -1,0 +1,17 @@
+la aplicacion esta completa en src
+ng update --all=true --force (node arma deps para src)
+ng serve -o (compila y levanta server)
+
+en app.component.ts agrego las clases que voy generando
+las componentes contienen la funcionalidad de cada clase y se agregan solas las dependencias
+
+usar subcarpetas clases y componentes dentro de src/app
+
+crear una clase:
+ng generate class clases/Hero
+y luego importarla en su componente o en la app.module.ts
+import { Hero } from "../../clases/hero";
+
+crear una componente:
+ng g c componentes/hero-detail
+se importa automaticamente en la app.module.ts
