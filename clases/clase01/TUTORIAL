@@ -1,0 +1,3 @@
+en app.component.ts agrego las clases que voy generando
+las componentes contienen la funcionalidad de cada clase y se agregan solas las dependencias
+ng update --all=true --force
