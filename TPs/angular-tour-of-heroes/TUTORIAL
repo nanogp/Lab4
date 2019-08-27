@@ -18,3 +18,6 @@ import { Hero } from "../../clases/hero";
 crear una componente:
 ng g c componentes/hero-detail
 se importa automaticamente en la app.module.ts
+
+el routing se genera con este comando:
+ng generate module app-routing --flat --module=app
