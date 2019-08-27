@@ -1,6 +1,6 @@
 <form action="action_page.php">
     <div class="imgcontainer">
-        <img src="assets/alf.jpg" alt="Avatar" class="avatar">
+        <img src="assets/img/alf.jpg" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
@@ -10,15 +10,16 @@
 
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required [(ngModel)]="usuario.clave">
+        <button type="button" (click)="loguearse()">Login</button>
 
-        <button type="submit" (click)="loggear()">Login</button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
+        <div *ngIf="mostrarError">
+            <!-- Esto hace que no se cree el html -->
+            <p>Loguin erroneo. Intente nuevamente</p>
+        </div>
+        <div [hidden]="!mostrarError">
+            <!-- Este crea el elemento html en el DOM, pero oculto -->
+            <p>Loguin erroneo. Intente nuevamente</p>
+        </div>
     </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
 </form>
