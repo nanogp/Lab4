@@ -1,12 +1,16 @@
-1. npm install -g ionic
+1. actualizar angular a ultima version
+ng update --all=true --force
 
-2. bajar sdk de android
+2. instalar ionic
+npm install -g ionic
+
+3. bajar sdk de android
 https://developer.android.com/studio/
 
-3. instalar gradle
+4. instalar gradle
 brew install gradle
 
-3. configurar PATH
+5. configurar PATH
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 # avdmanager, sdkmanager
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
@@ -19,17 +23,17 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 # For apksigner and zipalign, $ANDROID_SDK_ROOT/build-tools must also be added to PATH.
 
 
-4. conectar debug al telefono con adb
+6. conectar debug al telefono con adb
 adb connect ip:port (5555)
 
-5. crear proyecto
+7. crear proyecto
 ionic start
 
-6. compilar y servir aplicacion para probar
+8. compilar y servir aplicacion para probar
 ionic serve --address=0.0.0.0 --port=5555
 
-7. preparar para android
+9. preparar para android
 ionic cordova prepare android
 
-8. compilar y copiar app
+10. compilar y copiar app
 ionic cordova run android -l
