@@ -1,0 +1,12 @@
+<div>
+    <h2>Usuarios</h2>
+
+    <table class="usuarios">
+        <div *ngFor="let usuario of listadoUsuarios" class='container-fluid'>
+            <tr>
+                <td> {{usuario.nombre}}</td>
+                <td> {{usuario.clave}}</td>
+            </tr>
+        </div>
+    </table>
+</div>

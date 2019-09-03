@@ -37,3 +37,7 @@ ionic cordova prepare android
 
 10. compilar y copiar app
 ionic cordova run android -l
+
+11. generar apk
+ionic build android
+cordova build android

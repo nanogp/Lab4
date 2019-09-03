@@ -1,0 +1,14 @@
+<div>
+    <label>Nombre usuario:
+        <input #usuarioNombre [(ngModel)]="nombre">
+    </label>
+    <p></p>
+    <label>Clave usuario:
+        <input #usuarioClave [(ngModel)]="clave">
+    </label>
+
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(); usuarioNombre.value=''">
+        add
+    </button>
+</div>
