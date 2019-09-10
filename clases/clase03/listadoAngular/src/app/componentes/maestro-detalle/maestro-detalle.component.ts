@@ -8,15 +8,25 @@ import { Usuario } from 'src/app/clases/usuario';
 })
 export class MaestroDetalleComponent implements OnInit {
   listadoUsuarios: Usuario[];
+  usuarioMaestroDetalle: Usuario;
+  accionMaestroDetalle: String;
+
   constructor() {
     this.listadoUsuarios = new Array<Usuario>();
   }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  procesarAltaUsuario($event) {
+    this.listadoUsuarios.push($event);
+    console.info(this.listadoUsuarios);
   }
 
-  procesarAltaUsuario(usuario: any) {
-    this.listadoUsuarios.push(usuario);
-    console.info(this.listadoUsuarios);
+  procesarSeleccion($event) {
+    this.usuarioMaestroDetalle = $event;
+  }
+
+  procesarAccion($event) {
+    this.accionMaestroDetalle = $event;
   }
 }

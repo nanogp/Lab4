@@ -1,14 +1,27 @@
 <div>
     <label>Nombre usuario:
-        <input #usuarioNombre [(ngModel)]="nombre">
+        <input #usuarioNombre [(ngModel)]="usuarioABM.nombre">
     </label>
     <p></p>
     <label>Clave usuario:
-        <input #usuarioClave [(ngModel)]="clave">
+        <input #usuarioClave [(ngModel)]="usuarioABM.clave">
     </label>
 
     <!-- (click) passes input value to add() and then clears the input -->
-    <button (click)="add(); usuarioNombre.value=''">
-        add
+    <button *ngIf="hacerAlta" (click)="add(); usuarioNombre.value=''; usuarioClave.value=''">
+        Crear
     </button>
+
+    <button *ngIf="hacerBaja" (click)="add(); usuarioNombre.value=''; usuarioClave.value=''">
+        Borrar
+    </button>
+
+    <button *ngIf="hacerMod" (click)="add(); usuarioNombre.value=''; usuarioClave.value=''">
+        Guardar
+    </button>
+
+    <button *ngIf="hacerBaja||hacerMod" (click)="add(); usuarioNombre.value=''; usuarioClave.value=''">
+        Cancelar
+    </button>
+
 </div>
