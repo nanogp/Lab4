@@ -1,7 +1,7 @@
 1. instalar dependencias
 npm install -g @angular/cli
 npm install -g ionic
-npm install -g typescript
+npm install -g typescript@3.5.*
 npm install -g gradle
 npm install -g wrapper
 npm install -g cordova
