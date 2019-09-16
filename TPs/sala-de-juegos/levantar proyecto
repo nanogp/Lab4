@@ -1,0 +1,5 @@
+npm install --save rxjs-compat
+npm install --save @angular/http
+npm install --save @agm/core
+
+luego editar polyfill.ts y poner import 'core-js/es/reflect';
