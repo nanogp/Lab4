@@ -49,3 +49,6 @@ ionic cordova run android -l
 11. generar apk
 ionic build android
 cordova build android
+
+12. dependencias raras
+npm install --save rxjs-compat
