@@ -1,7 +1,0 @@
-{
-  "name": "login-android",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
