@@ -13,10 +13,10 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { MiHttpService } from './servicios/mi-http/mi-http.service'; 
-import { PaisesService } from './servicios/paises.service'; 
+import { PaisesService } from './servicios/paises/paises.service'; 
 
-import { JugadoresService } from './servicios/jugadores.service'; 
-import{ ArchivosJugadoresService} from './servicios/archivos-jugadores.service'; 
+import { JugadoresService } from './servicios/jugadores/jugadores.service'; 
+import{ ArchivosJugadoresService} from './servicios/archivos/archivos-jugadores.service'; 
 import { ErrorComponent } from './componentes/error/error.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { AgilidadAritmeticaComponent } from './componentes/agilidad-aritmetica/agilidad-aritmetica.component';
@@ -40,7 +40,7 @@ const MiRuteo = [{path: 'error' , component: ErrorComponent},
 */
 import { JugadoresListadoComponent } from './componentes/jugadores-listado/jugadores-listado.component';
 
-import { JuegoServiceService } from './servicios/juego-service.service';
+import { JuegoServiceService } from './servicios/juego/juego-service.service';
 import { ListadosComponent } from './componentes/listados/listados.component';
 import { JuegosComponent } from './componentes/juegos/juegos.component';
 import { RegistroComponent } from './componentes/registro/registro.component';

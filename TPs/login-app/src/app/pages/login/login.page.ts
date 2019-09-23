@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Usuario } from "../../clases/usuario";
 import { Router } from '@angular/router';
+import { LoginService } from "src/app/servicios/login/login.service";
 
 @Component({
   selector: 'app-login',
@@ -13,9 +14,8 @@ export class LoginPage implements OnInit {
   usuarioOk: Usuario;
   mostrarError: boolean;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private servicioLogin: LoginService) {
     this.usuario = new Usuario();
-    this.usuarioOk = new Usuario("u", "u");
     this.mostrarError = false;
   }
 
@@ -24,10 +24,12 @@ export class LoginPage implements OnInit {
   loguearse() {
     this.loggear();
 
-    if (this.usuario.nombre == this.usuarioOk.nombre && this.usuario.clave == this.usuarioOk.clave) {
+    if (this.servicioLogin.validar(this.usuario)) {
       this.router.navigateByUrl("/bienvenido");
     }
-    this.mostrarError = true;
+    else {
+      this.mostrarError = true;
+    }
   }
 
   loggear() {
