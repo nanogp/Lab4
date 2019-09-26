@@ -5,16 +5,25 @@ import { Usuario } from "src/app/clases/usuario";
   providedIn: 'root'
 })
 export class LoginService {
-  usuarioOk: Usuario = new Usuario();
 
-  constructor() { }
+  listaUsuariosPrueba: Array<Usuario>;
+
+  constructor() {
+    this.listaUsuariosPrueba = new Array<Usuario>();
+    this.listaUsuariosPrueba.push(new Usuario("admin", "admin"));
+    this.listaUsuariosPrueba.push(new Usuario("user", "user"));
+    this.listaUsuariosPrueba.push(new Usuario("dummy", "dummy"));
+  }
 
   validar(usuario: Usuario) {
-    if (usuario.nombre == this.usuarioOk.nombre && usuario.clave == this.usuarioOk.clave) {
-      return true;
-    } else {
-      return false;
-    }
+    let retorno: boolean = false;
+    this.listaUsuariosPrueba
+      .forEach((dato) => {
+        if (usuario.nombre == dato.nombre && usuario.clave == dato.clave) {
+          retorno = true;
+        }
+      });
+
+    return retorno;
   }
 }
-

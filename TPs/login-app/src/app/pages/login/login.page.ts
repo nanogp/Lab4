@@ -15,17 +15,23 @@ export class LoginPage implements OnInit {
   mostrarError: boolean;
 
   constructor(private router: Router, private servicioLogin: LoginService) {
-    this.usuario = new Usuario();
+    this.usuario = new Usuario("user", "user");
     this.mostrarError = false;
   }
 
   ngOnInit() { }
+
+  inicializar() {
+    this.usuario = new Usuario("", "");
+    this.mostrarError = false;
+  }
 
   loguearse() {
     this.loggear();
 
     if (this.servicioLogin.validar(this.usuario)) {
       this.router.navigateByUrl("/bienvenido");
+      this.inicializar();
     }
     else {
       this.mostrarError = true;

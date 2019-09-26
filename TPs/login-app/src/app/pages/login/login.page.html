@@ -1,37 +1,23 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title text-center>Login</ion-title>
   </ion-toolbar>
-</ion-header> -->
+</ion-header>
 
 <ion-content>
-  <div id="contenedor">
-    <form action="action_page.php">
-      <div class="imgcontainer">
-        <img src="assets/img/alf.jpg" alt="Avatar" class="avatar">
-      </div>
-
-      <div class="container">
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required value={{usuario.nombre}}
-          [(ngModel)]="usuario.nombre">
-
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required [(ngModel)]="usuario.clave">
-        <button type="button" (click)="loguearse()">Login</button>
-
-        <!-- Esto hace que no se cree el html -->
-        <div *ngIf="mostrarError">
-          <p>Loguin erroneo. Intente nuevamente</p>
-          <p>usuario: "u". clave: "u"</p>
-        </div>
-
-        <!-- Este crea el elemento html en el DOM, pero oculto -->
-        <!-- <div [hidden]="!mostrarError">
-            <p>Loguin erroneo. Intente nuevamente</p>
-        </div> -->
-      </div>
-
-    </form>
-  </div>
+  <img src="assets/icon/login.png" alt="icon" class="icon">
+  <ion-item>
+    <ion-label position="floating">Usuario</ion-label>
+    <ion-input type="text" name="usuario" placeholder="Ingrese su usuario" required value={{usuario.nombre}}
+      [(ngModel)]="usuario.nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Clave</ion-label>
+    <ion-input type="password" name="usuario" placeholder="Ingrese su clave" required value={{usuario.clave}}
+      [(ngModel)]="usuario.clave"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="mostrarError">
+    <p>Loguin erroneo. Intente nuevamente</p>
+  </ion-item>
+  <ion-button expand="block" (click)="loguearse()">Iniciar sesión</ion-button>
 </ion-content>
