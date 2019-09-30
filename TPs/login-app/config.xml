@@ -3,7 +3,7 @@
     <name>Aplicacion 1</name>
     <description>Splash y Login personalizados</description>
     <author email="nanogp@gmail.com" href="http://marianoponti.com.ar/">Autor</author>
-    <content original-src="index.html" src="http://localhost:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
