@@ -1,0 +1,18 @@
+<h1>PELICULAS</h1>
+
+<table>
+  <tr>
+    <th>Titulo</th>
+    <th>Descripcion</th>
+    <th>Poster</th>
+  </tr>
+  <tr *ngFor="let pelicula of peliculas">
+    <td>{{pelicula.original_title}}</td>
+    <td>{{pelicula.overview}}</td>
+    <td><img src="https://image.tmdb.org/t/p/w500{{pelicula.poster_path}}" alt="" style="width: 150px;"></td>
+  </tr>
+</table>
+
+<!-- 
+    
+-->

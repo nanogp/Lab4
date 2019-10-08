@@ -1,0 +1,8 @@
+<div *ngFor="let pelicula of listadoPeliculas">
+    <p>Nombre: {{pelicula.nombre}}</p>
+    <p>Tipo: {{pelicula.tipo}}</p>
+    <p>Fecha de estreno: {{pelicula.fechaEstreno}}</p>
+    <p>Cantidad de publico: {{pelicula.cantidadPublico}}</p>
+    <p>Foto: {{pelicula.foto}}</p>
+    <button (click)="Editar(pelicula)">Editar</button>
+</div>

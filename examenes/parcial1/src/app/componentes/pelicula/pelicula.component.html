@@ -1,0 +1,39 @@
+<input type="button" value="Mostrar ABM" (click)="toggleABM()">
+<div *ngIf="mostrarABM">
+    <p>Nombre</p>
+    <input type="text" [(ngModel)]="pelicula.nombre">
+
+    <p>Tipo Pelicula</p>
+    <select name="comboTipo" id="comboTipo">
+        <option *ngFor="let tipo of pelicula.getTipos()" value="{{tipo}}">{{tipo}}</option>
+    </select>
+
+    <p>Fecha Estreno</p>
+    <input type="text" [(ngModel)]="pelicula.fechaEstreno">
+
+    <p>Cantidad Publico</p>
+    <input type="text" [(ngModel)]="pelicula.cantidadPublico">
+
+    <p>Foto (aca te quiero ver)</p>
+    <input type="text" [(ngModel)]="pelicula.foto">
+
+    <br>
+    <br>
+    <button (click)="AgregarPelicula()" *ngIf="!editar">Agregar</button>
+    <button (click)="GuardarEditar()" *ngIf="editar">Guardar</button>
+    <button (click)="CancelarEditar()" *ngIf="editar">Cancelar</button>
+    <br>
+    <br>
+</div>
+<br>
+<br>
+<button (click)="CambiarVista('grilla')" *ngIf="vista == 'lista'">Ver Grilla</button>
+<button (click)="CambiarVista('lista')" *ngIf="vista == 'grilla'">Ver Listado</button>
+
+
+<h1 *ngIf="vista == 'lista'">Listado Peliculas</h1>
+<app-listado-de-peliculas [listadoPeliculas]="listadoPeliculas" *ngIf="vista == 'lista'"
+    (editarPelicula)="EditarPelicula($event)"></app-listado-de-peliculas>
+<h1 *ngIf="vista == 'grilla'">Grilla Peliculas</h1>
+<app-grilla-peliculas [listadoPeliculas]="listadoPeliculas" *ngIf="vista == 'grilla'"
+    (editarPelicula)="EditarPelicula($event)" (borrarPelicula)="BorrarPelicula($event)"></app-grilla-peliculas>
